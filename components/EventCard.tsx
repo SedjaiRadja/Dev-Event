@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+
 interface Props {
   slug: string;
   image: string;
@@ -24,11 +26,11 @@ function EventCard({ title, location, date, time, slug, image }: Props) {
       </div>
       <p className="title">{title}</p>
       <div className="datetime">
-        <div >
+        <div>
           <Image src="/calendar.svg" alt="date" width={14} height={14} />
           <p>{date}</p>
         </div>
-        <div >
+        <div>
           <Image src="/clock.svg" alt="time" width={14} height={14} />
           <p>{time}</p>
         </div>

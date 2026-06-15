@@ -1,4 +1,4 @@
-import { Schema, model, models, Document } from "mongoose";
+import { Schema, model, models, Document,Types  } from "mongoose";
 
 // TypeScript interface for Event document
 export interface IEvent extends Document {
@@ -18,6 +18,7 @@ export interface IEvent extends Document {
   tags: string[];
   createdAt: Date;
   updatedAt: Date;
+  category: Types.ObjectId;
 }
 
 const EventSchema = new Schema<IEvent>(
@@ -102,6 +103,11 @@ const EventSchema = new Schema<IEvent>(
         validator: (v: string[]) => v.length > 0,
         message: "At least one tag is required",
       },
+    },
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+      required: [true, "Category is required"],
     },
   },
   {

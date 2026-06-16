@@ -15,7 +15,7 @@ const EventDetailItem = ({ icon, alt, label }: { icon: string; alt: string; labe
     </div>
 )
 
-giconst EventAgenda = ({ agendaItems }: { agendaItems: string[] }) => (
+const EventAgenda = ({ agendaItems }: { agendaItems: string[] }) => (
     <div className="agenda">
         <h2>Agenda</h2>
         <ul>

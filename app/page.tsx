@@ -3,7 +3,9 @@ import { IEvent } from "../database/event.model";
 import EventCard from "../components/EventCard";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export default async function Page() {
-  const response = await fetch(`${BASE_URL}/api/events`);
+  const response = await fetch(`${BASE_URL}/api/events`, {
+  cache: "force-cache",
+});
   const { events } = await response.json();
   return (
     <section className="w-full">

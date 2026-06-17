@@ -7,7 +7,22 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
 
+  return NextResponse.json(
+    {
+      success: true,
+      id,
+    },
+    {
+      headers: corsHeaders,
+    }
+  );
+}
 export async function OPTIONS() {
   return new Response(null, {
     status: 200,

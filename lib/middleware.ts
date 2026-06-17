@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
 
   response.headers.set(
     "Access-Control-Allow-Origin",
-    "http://localhost:3002"
+    "*"
   );
 
   response.headers.set(
